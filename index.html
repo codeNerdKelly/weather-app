@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>codeNerdKelly Revised Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/742fdc3427.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-12">
+            <form class="search-form" id="search-form">
+              <input
+                type="search"
+                id="search-city"
+                placeholder="Search for City"
+                autofocus="on"
+                autocomplete="off"
+              />
+              <input
+                type="submit"
+                id="submit-search"
+                value="Search New City"
+              />
+              <input
+                type="submit"
+                id="submit-currentCity"
+                value="Current Location"
+              />
+            </form>
+            <h1>New York</h1>
+            <ul>
+              <li class="day-time">Sunday, 16:10</li>
+              <li class="current-weather">Cloudy with light rain</li>
+            </ul>
+            <div class="row">
+              <div class="col-6" id="current-temp">
+                <p class="display-temps"></p>
+                <i class="fa-duotone fa-clouds" id="cloudy-icon"></i>
+                <span class="far-temp">46° </span><sup class="temp-type">F |</sup>
+                <sup class="temp-type"><a href="#">C</sup></a>
+                </p>
+              </div>
+              <div class="col-6" id="condition-details">
+                <ul class="current-conditions">
+                  <li class="precipitation">Precipitation: 69%</li>
+                  <li class="humidity">Humidity: 76%</li>
+                  <li class="wind">Wind: 1 mph</li>
+                </ul>
+              </div>
+                <div class="row" id="forecast">
+                  <div class="col-2">
+                    <i class="fa-thin fa-bolt" id="lightning"></i>
+                    <h4 class="day-1-forecast">42°</h3>
+                    </div>
+                  <div class="col-2">
+                    <i class="fa-thin fa-sun"></i>
+                    <h4 class="day-2-forecast">44°</h3>
+                  </div>
+                  <div class="col-2">
+                    <i class="fa-thin fa-sun"></i>
+                    <h4 class="day-3-forecast">46°</h3>
+                  </div>
+                  <div class="col-2">
+                    <i class="fa-thin fa-sun"></i>
+                    <h4 class="day-4-forecast">48°</h3>
+                  </div>
+                  <div class="col-2">
+                    <i class="fa-thin fa-clouds-sun"></i>
+                    <h4 class="day-5-forecast">48°</h3>
+                  </div>
+                  <div class="col-2">
+                    <i class="fa-thin fa-cloud-sun-rain"></i>
+                    <h4 class="day-6-forecast">49°</h3>
+                  </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
