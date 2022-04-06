@@ -96,3 +96,7 @@ sup.temp-type {
     margin-top: 15px;
     margin-left: 10px;
 }
+.github-link {
+    text-align: center;
+    border: 1px dotted blue;
+}
