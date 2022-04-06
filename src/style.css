@@ -32,6 +32,8 @@ i {
 
 sup.temp-type {
     position: relative;
+    font-size: 16px;
+    top: -30px;
     text-decoration: none;
 }
 
