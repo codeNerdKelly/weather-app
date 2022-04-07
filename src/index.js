@@ -1,13 +1,14 @@
   let apiKey = "150e7cb5a93e7be83b4a7a6e8e4516c8";
    
 /*code to import current time and format it */
-function formatDate(date){
+function formatDate(timestamp){
+  
 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    let day = days[now.getDay()];
-    let hour = now.getHours();
-    let minute = now.getMinutes();
+    let date= new Date(timestamp)
+    let day = days[date.getDay()];
+    let hour = date.getHours();
+    let minute = date.getMinutes();
     
         if (hour < 10){
         hour= `0${hour}`;
@@ -18,14 +19,13 @@ function formatDate(date){
     
     return `${day}, ${hour}:${minute}`;
 }
-let now = new Date();
-let dayTime = document.querySelector(".day-time");
-dayTime.innerHTML= formatDate(now);
+
+
 
 /*code to return the weather for the current location */
 
 function showWeather(response){
-    console.log(response.data.wind.speed)
+    console.log(response.data.dt)
     
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
@@ -37,11 +37,14 @@ function showWeather(response){
     let humidity = response.data.main.humidity;
     let currentWind = document.querySelector("#wind-speed");
     let wind= Math.round(response.data.wind.speed);
+    let dayTime = document.querySelector("#day-time")
+    //let timeNow =
     h1.innerHTML= (`${currentLocation}`); 
     display.innerHTML =`${currentTemp}`
     description.innerHTML =(`${displayCurrentWeather}`);
     currentHumidity.innerHTML = (` ${humidity}%`);
     currentWind.innerHTML = (`${wind} `);
+    dayTime.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function searchNewCity (event){
