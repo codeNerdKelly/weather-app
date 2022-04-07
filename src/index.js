@@ -25,13 +25,20 @@ dayTime.innerHTML= formatDate(now);
 /*code to return the weather for the current location */
 
 function showWeather(response){
-
-    let display = document.querySelector(".far-temp");
-    let currentTemp = Math.round(response.data.main.temp);
-    display.innerHTML =`${currentTemp}`
+    console.log(response.data)
+    
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
+    let display = document.querySelector(".far-temp");
+    let currentTemp = Math.round(response.data.main.temp);
+    let description = document.querySelector("#current-weather");
+    let displayCurrentWeather = response.data.weather[0].description;
+    let currentHumidity= document.querySelector(".humidity");
+    let humidity = response.data.main.humidity;
     h1.innerHTML= (`${currentLocation}`); 
+    display.innerHTML =`${currentTemp}`
+    description.innerHTML =(`${displayCurrentWeather}`);
+    currentHumidity.innerHTML = (`${humidity}%`);
 }
 
 function searchNewCity (event){
