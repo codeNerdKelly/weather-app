@@ -33,12 +33,12 @@ function showWeather(response){
     let currentTemp = Math.round(response.data.main.temp);
     let description = document.querySelector("#current-weather");
     let displayCurrentWeather = response.data.weather[0].description;
-    let currentHumidity= document.querySelector(".humidity");
+    let currentHumidity= document.querySelector("#humidity");
     let humidity = response.data.main.humidity;
     h1.innerHTML= (`${currentLocation}`); 
     display.innerHTML =`${currentTemp}`
     description.innerHTML =(`${displayCurrentWeather}`);
-    currentHumidity.innerHTML = (`${humidity}%`);
+    currentHumidity.innerHTML = (` ${humidity}%`);
 }
 
 function searchNewCity (event){
