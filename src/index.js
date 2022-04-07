@@ -3,12 +3,14 @@
 /*code to import current time and format it */
 function formatDate(timestamp){
   
-
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let date= new Date(timestamp)
     let day = days[date.getDay()];
     let hour = date.getHours();
     let minute = date.getMinutes();
+    console.log(day);
+    console.log(hour);
+    console.log(minute);
     
         if (hour < 10){
         hour= `0${hour}`;
@@ -37,8 +39,7 @@ function showWeather(response){
     let humidity = response.data.main.humidity;
     let currentWind = document.querySelector("#wind-speed");
     let wind= Math.round(response.data.wind.speed);
-    let dayTime = document.querySelector("#day-time")
-    //let timeNow =
+    let dayTime = document.querySelector("#day-time");
     h1.innerHTML= (`${currentLocation}`); 
     display.innerHTML =`${currentTemp}`
     description.innerHTML =(`${displayCurrentWeather}`);
