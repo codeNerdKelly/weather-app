@@ -103,3 +103,8 @@ sup.temp-type {
     text-align: center;
     border: 1px dotted blue;
 }
+
+#icon {
+    position: relative;
+    bottom: 10px;
+}
