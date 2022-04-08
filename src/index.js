@@ -24,7 +24,7 @@ function formatDate(timestamp){
 /*code to return the weather for the current location */
 
 function showWeather(response){
-    console.log(response.data);
+    console.log(response.data.weather[0].icon);
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
     let display = document.querySelector(".far-temp");
@@ -37,13 +37,15 @@ function showWeather(response){
     let wind= Math.round(response.data.wind.speed);
     let dayTime = document.querySelector("#day-time");
     let icon = document.querySelector("#icon");
-    icon.innerHTML = response.data.weather[0].icon;
+   
     h1.innerHTML= (`${currentLocation}`); 
     display.innerHTML =`${currentTemp}`
     description.innerHTML =(`${displayCurrentWeather}`);
     currentHumidity.innerHTML = (` ${humidity}%`);
     currentWind.innerHTML = (`${wind} `);
     dayTime.innerHTML = formatDate(response.data.dt * 1000);
+    icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+     icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchNewCity (event){
