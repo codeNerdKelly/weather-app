@@ -1,5 +1,6 @@
   let apiKey = "150e7cb5a93e7be83b4a7a6e8e4516c8";
   let currentTemp;
+  let celsiusTemp;
    
 /*code to import current time and format it */
 function formatDate(timestamp){
@@ -27,10 +28,10 @@ function formatDate(timestamp){
 /*code to return the weather for the current location */
 
 function showWeather(response){
-    console.log(response.data.weather[0].icon);
+   
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
-    let display = document.querySelector(".far-temp");
+    let display = document.querySelector(".display-temp");
     currentTemp = Math.round(response.data.main.temp);
     let description = document.querySelector("#current-weather");
     let displayCurrentWeather = response.data.weather[0].description;
@@ -42,7 +43,7 @@ function showWeather(response){
     let icon = document.querySelector("#icon");
    
     h1.innerHTML= (`${currentLocation}`); 
-    display.innerHTML =`${currentTemp}`
+    display.innerHTML =`${currentTemp}`;
     description.innerHTML =(`${displayCurrentWeather}`);
     currentHumidity.innerHTML = (` ${humidity}%`);
     currentWind.innerHTML = (`${wind} `);
@@ -70,9 +71,16 @@ function searchCurrentCity(event) {
 
 function convertToCelsius (event){
   event.preventDefault();
-  let displayCelsius= document.querySelector(".display-temp")
-  let celsiusTemp = Math.round((currentTemp - 32) * 5/9);
+  let displayCelsius= document.querySelector(".display-temp");
+  celsiusTemp = Math.round((currentTemp - 32) * 5/9);
   displayCelsius.innerHTML= celsiusTemp;
+}
+
+function convertToFahrenheit (event) {
+  event.preventDefault();
+  let displayFahrenheit = document.querySelector(".display-temp");
+  let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
+  displayFahrenheit.innerHTML = fahrenheitTemp;
 }
 
 let form= document.querySelector("#search-form");
