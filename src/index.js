@@ -6,10 +6,10 @@ function formatDate(timestamp){
    
     let hour = date.getHours();
     
-
         if (hour < 10){
         hour= `0${hour}`;
         }
+
     let minute = date.getMinutes();
 
         if (minute < 10){
@@ -74,3 +74,6 @@ function searchCurrentCity(event) {
 
 let button2 = document.querySelector("#submit-currentCity");
 button2.addEventListener("click", searchCurrentCity);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", convertToCelsius);
