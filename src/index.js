@@ -21,12 +21,10 @@ function formatDate(timestamp){
     return `${day}, ${hour}:${minute}`;
 }
 
-
-
 /*code to return the weather for the current location */
 
 function showWeather(response){
-   
+    console.log(response.data);
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
     let display = document.querySelector(".far-temp");
@@ -38,6 +36,8 @@ function showWeather(response){
     let currentWind = document.querySelector("#wind-speed");
     let wind= Math.round(response.data.wind.speed);
     let dayTime = document.querySelector("#day-time");
+    let icon = document.querySelector("#icon");
+    icon.innerHTML = response.data.weather[0].icon;
     h1.innerHTML= (`${currentLocation}`); 
     display.innerHTML =`${currentTemp}`
     description.innerHTML =(`${displayCurrentWeather}`);
