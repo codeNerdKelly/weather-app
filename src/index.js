@@ -3,23 +3,25 @@
 /*code to import current time and format it */
 function formatDate(timestamp){
     let date= new Date(timestamp);
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
+   
     let hour = date.getHours();
-    let minute = date.getMinutes();
-    console.log(day);
-    console.log(hour);
-    console.log(minute);
     
+
         if (hour < 10){
         hour= `0${hour}`;
         }
+    let minute = date.getMinutes();
+
         if (minute < 10){
         minute= `0${minute}`;
         }
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
     
     return `${day}, ${hour}:${minute}`;
 }
+
 
 /*code to return the weather for the current location */
 
