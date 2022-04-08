@@ -82,7 +82,7 @@ sup.temp-type {
     transition: all 150ms ease-in-out;
 }
 
-.far-temp, .cel-temp{
+.display-temp {
     font-size: 48px; 
 }
 

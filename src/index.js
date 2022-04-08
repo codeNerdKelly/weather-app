@@ -1,4 +1,5 @@
   let apiKey = "150e7cb5a93e7be83b4a7a6e8e4516c8";
+  let currentTemp;
    
 /*code to import current time and format it */
 function formatDate(timestamp){
@@ -30,7 +31,7 @@ function showWeather(response){
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
     let display = document.querySelector(".far-temp");
-    let currentTemp = Math.round(response.data.main.temp);
+    currentTemp = Math.round(response.data.main.temp);
     let description = document.querySelector("#current-weather");
     let displayCurrentWeather = response.data.weather[0].description;
     let currentHumidity= document.querySelector("#humidity");
@@ -57,11 +58,6 @@ function searchNewCity (event){
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
 
-let form= document.querySelector("#search-form");
-form.addEventListener("submit", searchNewCity)
-
-
-
 function searchCurrentCity(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(function (position){
@@ -72,8 +68,21 @@ function searchCurrentCity(event) {
   });
 }
 
+function convertToCelsius (event){
+  event.preventDefault();
+  let displayCelsius= document.querySelector(".display-temp")
+  let celsiusTemp = Math.round((currentTemp - 32) * 5/9);
+  displayCelsius.innerHTML= celsiusTemp;
+}
+
+let form= document.querySelector("#search-form");
+form.addEventListener("submit", searchNewCity)
+
 let button2 = document.querySelector("#submit-currentCity");
 button2.addEventListener("click", searchCurrentCity);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertToCelsius);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", convertToFahrenheit);
