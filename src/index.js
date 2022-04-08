@@ -2,9 +2,8 @@
    
 /*code to import current time and format it */
 function formatDate(timestamp){
-  
+    let date= new Date(timestamp);
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let date= new Date(timestamp)
     let day = days[date.getDay()];
     let hour = date.getHours();
     let minute = date.getMinutes();
@@ -27,8 +26,7 @@ function formatDate(timestamp){
 /*code to return the weather for the current location */
 
 function showWeather(response){
-    console.log(response.data.dt)
-    
+   
     let h1 = document.querySelector("h1");
     let currentLocation = response.data.name;
     let display = document.querySelector(".far-temp");
