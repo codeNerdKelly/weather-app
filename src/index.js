@@ -49,14 +49,14 @@ function showWeather(response){
     currentWind.innerHTML = (`${wind} `);
     dayTime.innerHTML = formatDate(response.data.dt * 1000);
     icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-     icon.setAttribute("alt", response.data.weather[0].description);
+    icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchNewCity (event){
     event.preventDefault();
     let userSearch= document.querySelector("#search-city");
     let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${userSearch.value}&appid=${apiKey}&units=imperial`;
-    axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
+    axios.get(`${apiUrl}`).then(showWeather);
 }
 
 function searchCurrentCity(event) {
@@ -71,6 +71,9 @@ function searchCurrentCity(event) {
 
 function convertToCelsius (event){
   event.preventDefault();
+   if (currentTemp == null){
+    alert("Please search for a city");
+  }
   let displayCelsius= document.querySelector(".display-temp");
   celsiusTemp = Math.round((currentTemp - 32) * 5/9);
   displayCelsius.innerHTML= celsiusTemp;
@@ -78,10 +81,15 @@ function convertToCelsius (event){
 
 function convertToFahrenheit (event) {
   event.preventDefault();
+  if (currentTemp == null || celsiusTemp == null){
+    alert("Please search for a city");
+  }
   let displayFahrenheit = document.querySelector(".display-temp");
   let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
   displayFahrenheit.innerHTML = fahrenheitTemp;
 }
+
+
 
 let form= document.querySelector("#search-form");
 form.addEventListener("submit", searchNewCity)
