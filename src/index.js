@@ -60,7 +60,7 @@ function searchNewCity (event){
 }
 
 function searchCurrentCity(event) {
-  event.preventDefault();
+  //event.preventDefault();
   navigator.geolocation.getCurrentPosition(function (position){
   let myLat = position.coords.latitude;
   let myLon = position.coords.longitude;
@@ -82,7 +82,7 @@ function convertToCelsius (event){
 function convertToFahrenheit (event) {
   event.preventDefault();
   if (currentTemp == null || celsiusTemp == null){
-    alert("Please search for a city");
+    searchCurrentCity();
   }
   let displayFahrenheit = document.querySelector(".display-temp");
   let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
