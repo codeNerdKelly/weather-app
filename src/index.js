@@ -74,6 +74,8 @@ function convertToCelsius (event){
    if (currentTemp == null){
     alert("Please search for a city");
   }
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
   let displayCelsius= document.querySelector(".display-temp");
   celsiusTemp = Math.round((currentTemp - 32) * 5/9);
   displayCelsius.innerHTML= celsiusTemp;
@@ -84,6 +86,8 @@ function convertToFahrenheit (event) {
   if (currentTemp == null || celsiusTemp == null){
     searchCurrentCity();
   }
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   let displayFahrenheit = document.querySelector(".display-temp");
   let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
   displayFahrenheit.innerHTML = fahrenheitTemp;

@@ -108,3 +108,9 @@ sup.temp-type {
     position: relative;
     bottom: 10px;
 }
+
+#fahrenheit.active, #celsius.active {
+    color:#454a4f;
+    cursor: default;
+    text-decoration: none;
+}
