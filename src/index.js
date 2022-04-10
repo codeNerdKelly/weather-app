@@ -1,6 +1,6 @@
   let apiKey = "150e7cb5a93e7be83b4a7a6e8e4516c8";
   let currentTemp;
-  let celsiusTemp;
+  
    
 /*code to import current time and format it */
 function formatDate(date){
@@ -114,31 +114,7 @@ function searchCurrentCity(event) {
   });
 }
 
-function convertToCelsius (event){
-  event.preventDefault();
-   if (currentTemp == null){
-    alert("Please search for a city");
-  }
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-  let displayCelsius= document.querySelector(".display-temp");
-  celsiusTemp = Math.round((currentTemp - 32) * 5/9);
-  displayCelsius.innerHTML= celsiusTemp;
-}
-
-function convertToFahrenheit (event) {
-  event.preventDefault();
-  if (currentTemp == null || celsiusTemp == null){
-    searchCurrentCity();
-  }
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let displayFahrenheit = document.querySelector(".display-temp");
-  let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
-  displayFahrenheit.innerHTML = fahrenheitTemp;
-}
 searchCurrentCity();
-
 
 let form= document.querySelector("#search-form");
 form.addEventListener("submit", searchNewCity)
@@ -146,8 +122,3 @@ form.addEventListener("submit", searchNewCity)
 let button2 = document.querySelector("#submit-currentCity");
 button2.addEventListener("click", searchCurrentCity);
 
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", convertToCelsius);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", convertToFahrenheit);

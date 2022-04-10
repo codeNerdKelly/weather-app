@@ -225,7 +225,7 @@ sup.temp-type {
     border: 2px solid red;
     border-radius: 25px;
     padding: 0;
-    max-width: 430px;
+    max-width: 480px;
     margin-top: 15px;
     margin-left: 25px;
     margin-right:10px;
@@ -235,6 +235,8 @@ sup.temp-type {
     padding-right: 0;
     opacity: 1;
 }
+
+
 .github-link {
     text-align: center;
     border: 1px dotted blue;
@@ -257,9 +259,3 @@ sup.temp-type {
     height: 50px;
 }
 
-#fahrenheit.active, #celsius.active {
-    color:black;
-    cursor: default;
-    text-decoration: none;
-    opacity: 1;
-}
