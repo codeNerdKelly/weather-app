@@ -45,6 +45,15 @@ i {
     margin-bottom: 5px;
     opacity: 1;
 }
+.search-form {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    opacity: 1;
+}
 
 sup.temp-type {
     position: relative;
@@ -117,17 +126,9 @@ sup.temp-type {
     top: 20px;
     margin: 0;
     padding: 0;
+}
 
-}
-.search-form {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    opacity: 1;
-}
+
 #search-city {
     border: none;
     box-shadow: 5px 5px 5px darkgray;

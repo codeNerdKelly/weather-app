@@ -24,6 +24,34 @@ let now = new Date();
 let dayTime = document.querySelector(".day-time");
 dayTime.innerHTML= formatDate(now);
 
+function getForecast (coordinates){
+
+  let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`
+  axios.get(apiUrl).then(displayForecast)
+
+}
+
+function displayForecast (response){
+  console.log(response.data.daily)
+  let forecastElement= document.querySelector("#weather-forecast");
+  let forecastHTML= `<div class="row" id="forecast">`
+  let days =["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function(day){
+  forecastHTML = forecastHTML + `
+    <div class="col-2">
+      <span class="forecast-days" id="day-one">Mon</span>
+      <span>
+        <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" id="day-one-icon" alt="rainy day icon"/></span>
+        <span class="forecast-max" id="forecast-max">42°</span>
+        <span class="forecast-min" id="forecast-min">  38°</span>
+    </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`
+  
+  
+  forecastElement.innerHTML= forecastHTML;
+}
 
 /*code to return the weather for the current location */
 
@@ -48,6 +76,8 @@ function showWeather(response){
     currentWind.innerHTML = (`${wind} `);
     icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     icon.setAttribute("alt", response.data.weather[0].description);
+
+    getForecast(response.data.coord);
 }
 
 function searchNewCity (event){
@@ -90,7 +120,7 @@ function convertToFahrenheit (event) {
   let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
   displayFahrenheit.innerHTML = fahrenheitTemp;
 }
-
+searchCurrentCity();
 
 
 let form= document.querySelector("#search-form");
