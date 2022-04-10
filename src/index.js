@@ -26,9 +26,11 @@ dayTime.innerHTML= formatDate(now);
 
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000);
+  let day= date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let day = days[date.getDay()];
-  return day;
+ 
+  return days[day];
+
 }
 
 
@@ -46,19 +48,22 @@ function displayForecast (response){
   let forecastElement= document.querySelector("#weather-forecast");
   let forecastHTML= `<div class="row" id="forecast">`
   
-  forecast.forEach(function(forecastDay){
+  forecast.forEach(function(forecastDay, index){
+
+    if (index <= 4){
   forecastHTML = forecastHTML + `
     <div class="col-2">
       <span class="forecast-days" id="day-one">${formatDay(forecastDay.dt)}</span>
       <span>
         <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
-        id="day-one-icon" 
+        id="forecast-icon" 
         alt="rainy day icon"/></span>
         <span class="forecast-max" id="forecast-max">${Math.round(forecastDay.temp.max)}</span>
         <span class="forecast-min" id="forecast-min"> ${Math.round(forecastDay.temp.min)}</span>
     </div>
-`;
+`;}
   });
+
   forecastHTML = forecastHTML + `</div>`
   
   
@@ -79,7 +84,6 @@ function showWeather(response){
     let humidity = response.data.main.humidity;
     let currentWind = document.querySelector("#wind-speed");
     let wind= Math.round(response.data.wind.speed);
-    let dayTime = document.querySelector("#day-time");
     let icon = document.querySelector("#icon");
    
     h1.innerHTML= (`${currentLocation}`); 
@@ -87,7 +91,6 @@ function showWeather(response){
     description.innerHTML =(`${displayCurrentWeather}`);
     currentHumidity.innerHTML = (` ${humidity}%`);
     currentWind.innerHTML = (`${wind} `);
-     dayTime.innerHTML = formatDate(response.data.dt * 1000);
     icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     icon.setAttribute("alt", response.data.weather[0].description);
 

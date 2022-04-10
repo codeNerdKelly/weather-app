@@ -206,20 +206,22 @@ sup.temp-type {
 }
 .forecast-max {
     font-size: 16px;
-    color:#454a4f;
+    color: black;
+    font-weight: bold;
     opacity: 1;
 
 }
 
 .forecast-min {
     font-size: 16px;
-    color: #9da6b0;
+    color: rgb(5, 105, 227);
+    font-weight: 100;
     opacity: 1;
 }
 
 #forecast {
     
-    background: rgba(157, 166, 176, 0.4);
+    background: rgba(157, 166, 176, 0.9);
     border: 2px solid red;
     border-radius: 25px;
     padding: 0;
@@ -241,9 +243,18 @@ sup.temp-type {
 #icon {
     position: relative;
     bottom: 10px;
+    width: 65px;
+    height: 65px;
     margin: 0;
     padding: 0;
     opacity: 1;
+}
+
+#forecast-icon {
+    position: relative;
+    right: 5px;
+    width: 50px;
+    height: 50px;
 }
 
 #fahrenheit.active, #celsius.active {
