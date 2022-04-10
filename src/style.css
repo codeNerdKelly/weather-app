@@ -63,7 +63,7 @@ sup.temp-type {
     border-radius: 25px;
     padding: 2px 8px;
     margin-bottom: 10px;
-    max-width: 200px;
+    max-width: 300px;
     opacity: 1;
 }
 
@@ -71,6 +71,7 @@ sup.temp-type {
     color: rgb(30, 11, 11);
     font-weight: 500;
     font-size: 18px;
+    line-height: 1;
     opacity: 1;
 }
 
@@ -110,10 +111,12 @@ sup.temp-type {
 }
 
 #condition-details li{
-    color: white; 
+    color: rgb(55, 1, 120); 
     text-align: center;
     position: relative;
     top: 20px;
+    margin: 0;
+    padding: 0;
 
 }
 .search-form {
