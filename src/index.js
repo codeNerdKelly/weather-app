@@ -3,25 +3,32 @@
   let celsiusTemp;
    
 /*code to import current time and format it */
-function formatDate(timestamp){
-    let date= new Date(timestamp);
-   
-    let hour = date.getHours();
+function formatDate(date){
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[now.getDay()];
+    let hour = now.getHours();
+    let minute = now.getMinutes();
     
         if (hour < 10){
         hour= `0${hour}`;
         }
-
-    let minute = date.getMinutes();
-
         if (minute < 10){
         minute= `0${minute}`;
         }
-
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
     
     return `${day}, ${hour}:${minute}`;
+}
+let now = new Date();
+let dayTime = document.querySelector(".day-time");
+dayTime.innerHTML= formatDate(now);
+
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
 }
 
 
@@ -33,18 +40,22 @@ function getForecast (coordinates){
 }
 
 function displayForecast (response){
-  console.log(response.data.daily)
+  
+  let forecast = response.data.daily;
+
   let forecastElement= document.querySelector("#weather-forecast");
   let forecastHTML= `<div class="row" id="forecast">`
-  let days =["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function(day){
+  
+  forecast.forEach(function(forecastDay){
   forecastHTML = forecastHTML + `
     <div class="col-2">
-      <span class="forecast-days" id="day-one">Mon</span>
+      <span class="forecast-days" id="day-one">${formatDay(forecastDay.dt)}</span>
       <span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" id="day-one-icon" alt="rainy day icon"/></span>
-        <span class="forecast-max" id="forecast-max">42°</span>
-        <span class="forecast-min" id="forecast-min">  38°</span>
+        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+        id="day-one-icon" 
+        alt="rainy day icon"/></span>
+        <span class="forecast-max" id="forecast-max">${Math.round(forecastDay.temp.max)}</span>
+        <span class="forecast-min" id="forecast-min"> ${Math.round(forecastDay.temp.min)}</span>
     </div>
 `;
   });
