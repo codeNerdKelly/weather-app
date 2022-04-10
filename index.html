@@ -23,9 +23,10 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="row">
-          <div class="col-12">
+        
             <form class="search-form" id="search-form">
+              <div class="row">
+               <div class="col-12">
               <input
                 type="search"
                 id="search-city"
@@ -33,17 +34,25 @@
                 autofocus="on"
                 autocomplete="off"
               />
+              <div class="row">
+                <div class="col-12">
               <input
                 type="submit"
                 id="submit-search"
-                value="Search City"
+                value="Search New City"
               />
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-12">
               <input
                 type="submit"
                 id="submit-currentCity"
                 value="Current Location"
               />
             </form>
+            </div>
+            </div>
             <div class="main-display">
             <h1 id="default-city">New York</h1>
             <ul>
@@ -55,7 +64,7 @@
               <div class="col-6" id="current-temp">
                 <p class="display-temps"></p>
                 <span><img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" id="icon" alt="rainy day icon"></span>
-                <span class="display-temp">46° </span><sup class="temp-type"><a href="#" id="fahrenheit" class="active" > F |</a></sup>
+                <span class="display-temp">46°</span><sup class="temp-type"><a href="#" id="fahrenheit" class="active" > F|</a></sup>
                 <sup class="temp-type"><a href="#" id="celsius">C</sup></a>
                 </p>
               </div>
