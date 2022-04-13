@@ -254,4 +254,7 @@ i {
     opacity: 1;
 }
 
-
+#forecast-icon {
+    position: relative;
+    right: 5px;
+}
