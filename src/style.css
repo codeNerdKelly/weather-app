@@ -247,6 +247,8 @@ i {
 
 #icon {
     position: relative;
+    max-width: 65px;
+    max-height: 65px;
     bottom: 10px;
     margin: 0;
     padding: 0;
@@ -256,4 +258,6 @@ i {
 #forecast-icon {
     position: relative;
     right: 5px;
+    max-width: 50px;
+    max-height: 50px;
 }
