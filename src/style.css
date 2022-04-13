@@ -186,8 +186,9 @@ sup.temp-type {
 }
 
 .current-conditions {
-    margin-top:15px;
+    margin-top: 0;
     margin-left: 15px;
+    text-align: center;
     opacity: 1;
 }
 #cloudy-icon {
