@@ -142,6 +142,7 @@ i {
     border: none;
     box-shadow: 5px 5px 5px darkgray;
     padding: 8px 45px;
+    margin-bottom: 8px;
     max-width: 400px;
     border-radius: 20px;
     opacity: 1;
@@ -149,7 +150,7 @@ i {
 
 #submit-search {
     background: #2172e4;
-    margin: 10px 5px;
+    margin: 8px 5px;
     padding:8px 30px;
     border-radius: 40px;
     box-shadow: 5px 5px 5px darkgray;
