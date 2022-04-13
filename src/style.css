@@ -5,7 +5,7 @@ body {
 .weather-app{
     border: 2px solid darkgray;
     max-width: 580px;
-    max-height: 800px;
+    max-height: 1400px;
     margin: 0 auto;
     padding: 20px 35px;
     border-radius: 20px;
@@ -57,7 +57,7 @@ i {
 
 .temp-type {
     position: relative;
-    top: 30px;
+    top: -30px;
     font-size: 16px;
     text-decoration: none;
     opacity: 1;
@@ -115,6 +115,7 @@ i {
     border-radius: 25px;
     padding: 0;
     margin: 0;
+    margin-top: 12px;
     margin-left:15px;
     max-width: 200px;
 }
