@@ -247,8 +247,8 @@ i {
 #icon {
     position: relative;
     bottom: 10px;
-    width: 65px;
-    height: 65px;
+    max-width: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
     opacity: 1;
@@ -257,4 +257,6 @@ i {
 #forecast-icon {
     position: relative;
     right: 5px;
+    max-width: 100%;
+    height: auto;
 }
