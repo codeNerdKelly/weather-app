@@ -4,10 +4,10 @@ body {
 }
 .weather-app{
     border: 2px solid darkgray;
-    max-width: 580px;
+    max-width: 600px;
     max-height: 1400px;
     margin: 0 auto;
-    padding: 20px 35px;
+    padding: 20px 25px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.1), rgba(146, 146, 185, 0.1)), url("../streetart.jpeg");
     opacity: 1;
@@ -18,6 +18,7 @@ ul{
     padding: 0;
     opacity: 1;
     padding-bottom: 10px;
+    
 }
 li {
     color: #9098a2;
@@ -72,7 +73,7 @@ i {
     border-radius: 25px;
     padding: 2px 8px;
     margin-bottom: 10px;
-    max-width: 300px;
+    max-width: flex;
     opacity: 1;
 }
 
@@ -97,36 +98,40 @@ i {
 }
 
 #current-temp{
-    position: relative;
-    left: 25px;
+    display:block;
+    margin: 0 auto;
     background: rgba(157, 166, 176, 0.4);
     border: 2px solid red;
     border-radius: 25px;
     padding: 0;
-    margin-bottom: 0;
-    max-width: 200px;
+    max-width: flex;
+}
+
+.current-conditions {
+    margin-top: 0;
+    margin-left: 5px;
+    text-align: center;
+    opacity: 1;
 }
 
 #condition-details {
-    position: relative;
-    left: 40px;
+    display:block;
+    margin: 0 auto;
     background: rgba(157, 166, 176, 0.4);
     border: 2px solid red;
     border-radius: 25px;
-    padding: 0;
-    margin: 0;
-    margin-top: 12px;
-    margin-left:15px;
-    max-width: 200px;
+    padding: flex;
+    max-width: flex;
+    max-height: flex;
 }
 
 #condition-details li{
     color: rgb(55, 1, 120); 
     text-align: center;
-    position: relative;
-    top: 20px;
-    margin: 0;
+    display:block;
+    margin: 0 auto;
     padding: 0;
+    
 }
 
 
@@ -186,12 +191,7 @@ i {
     opacity: 1;
 }
 
-.current-conditions {
-    margin-top: 0;
-    margin-left: 15px;
-    text-align: center;
-    opacity: 1;
-}
+
 #cloudy-icon {
     font-size: 36px;
     margin-top:15px;
