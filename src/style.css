@@ -55,10 +55,10 @@ i {
     opacity: 1;
 }
 
-sup.temp-type {
+.temp-type {
     position: relative;
+    top: 30px;
     font-size: 16px;
-    top: -30px;
     text-decoration: none;
     opacity: 1;
 }
