@@ -129,9 +129,11 @@ i {
     color: rgb(55, 1, 120); 
     text-align: center;
     display:block;
+    position: relative;
+    top: 20px;
     margin: 0 auto;
+    margin-bottom: 10px;
     padding: 0;
-    
 }
 
 
