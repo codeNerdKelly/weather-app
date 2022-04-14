@@ -55,7 +55,7 @@ function displayForecast (response){
     <div class="col-sm-2">
       <span class="forecast-days" id="day-one">${formatDay(forecastDay.dt)}</span>
       <span>
-        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+        <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
         id="forecast-icon" 
         class="img-fluid"
         alt="rainy day icon"/></span>
